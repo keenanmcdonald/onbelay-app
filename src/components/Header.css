@@ -1,0 +1,54 @@
+header{
+    position: relative;
+    height: 40px;
+    width: 100%;
+    background-color: #272727;
+    display: flex;
+    justify-content: space-between;
+    color: #f7f7f7;
+    z-index: 10;
+    box-shadow: 0px 1px 1px #4b4b4b;
+    text-align: center;
+}
+.page-title-container{
+    padding: 10px 0%;
+    position: absolute;
+    margin: 0px 30%;
+    width: 40%;
+}
+
+.menu-icon{
+    height: 40px;
+    width: 40px;
+}
+
+.logo-container:hover{
+    cursor: pointer;
+}
+.logo-container:hover .onbelay-title{
+    color: #f7f7f7;
+}
+
+.figure-eight-logo{
+    height: 80px;
+    position: absolute;
+    top: -20px;
+    left: -10px;
+    display: inline-block;
+}
+
+h1.onbelay-title{
+    font-family: 'Lily Script One', cursive;
+    display: inline-block;
+    margin-left: 60px;
+    margin-top: 6px;
+    font-size: 20px;
+    transition: .5s;
+}
+
+.nav-buttons .nav-button-container {
+    position: relative;
+    transition: .5s ease;
+    display: inline-block;
+}
+

@@ -1,0 +1,105 @@
+.nav-button-container{
+    height: 40px;
+}
+.nav-button{
+    border-radius: 100%;
+    margin-top: 4px;
+    margin-right: 6px;
+    margin-bottom: 2px;
+    padding: 0px;
+    height: 32px;
+    width: 32px;
+    background-color: transparent;
+    border: none;
+}
+.nav-button:hover{
+    background-color: rgba(255, 255, 255, 0.082);
+}
+
+.nav-button.depressed{
+    background-color: #181818;
+    box-shadow:  inset 1px 1px 2px #0f0f0f, 
+    inset -1px -1px 2px #444444;
+}
+
+
+.nav-thumbnail{
+    height: 32px;
+    width: 32px;
+    border-radius: 100%;
+    margin: 0px;
+    margin-top: 1px;
+    box-shadow:  1px 1px 2px #0f0f0f, 
+    -1px -1px 2px #444444;
+}
+.user-thumbnail{
+    height: 32px;
+    width: 32px;
+    border-radius: 100%;
+    margin: 0px;
+    border: 1px solid rgba(39,39,39);
+    filter: brightness(95%);
+    box-shadow:  1px 1px 2px #0e0e0e, 
+    -1px -1px 2px #3b3b3b;
+    object-fit: cover;
+
+}
+.user-thumbnail:hover{
+    filter: brightness(100%);
+    filter: saturate(100%);
+    box-shadow:  2px 2px 3px #0c0c0c, 
+    -2px -2px 3px #3b3b3b;
+}
+.nav-button.depressed .user-thumbnail{
+    filter: brightness(75%);
+    box-shadow:  inset 1px 1px 2px #0f0f0f, 
+    inset -1px -1px 2px #444444;
+}
+.nav-button.depressed .user-thumbnail:hover{
+    filter: brightness(90%);
+    cursor: pointer;
+}
+.nav-button.depressed .nav-thumbnail, .nav-button.depressed:hover .nav-thumbnail{
+    box-shadow:  none;
+}
+.nav-button.depressed:hover .nav-thumbnail{
+    cursor: pointer;
+}
+
+.nav-button.depressed:hover{
+    background-color: #272727;
+    box-shadow:  inset 1px 1px 2px #0f0f0f, 
+    inset -1px -1px 2px #444444;
+}
+
+.nav-button:hover .nav-thumbnail{
+    box-shadow:  2px 2px 3px #0f0f0f, 
+    -2px -2px 3px #444444;
+}
+
+.nav-button, .nav-button:hover {
+    box-shadow: none;
+}
+
+.nav-button-title{
+    color: transparent;
+    visibility: hidden;
+    transition: .2s;
+    height: 40px;
+    vertical-align: middle;
+    margin: 0px 1px;
+    font-size: 10px;
+    display: inline-block;
+}
+
+.nav-button-container:hover .nav-button-title{
+    visibility: visible;
+    color: #f7f7f7;
+}
+
+@media only screen and (max-width: 600px) {
+    button.nav-button{
+        margin-left: 4px;
+        margin-right: 4px;
+    }
+}

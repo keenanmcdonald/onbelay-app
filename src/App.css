@@ -1,0 +1,188 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* Conventions:
+border-radius: 4px
+
+Colors: 
+	off-white: #f7f7f7
+	lightest-blue: #effffb
+	Green: #50d890
+	Blue: #4f98ca
+	Black: #272727
+*/
+
+body {
+	background-color: #f7f7f7;
+
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Telex', sans-serif;
+}
+
+h1, h2{
+	font-family: 'Nunito', sans-serif;
+}
+
+main {
+	text-align: center;
+	background-color: #f7f7f7;
+}
+
+.App{
+	height: 100%;
+}
+
+button {
+	background-color: #50d890;
+	border-radius: 4px;
+	font-size: 14px;
+	margin: 8px;
+	padding: 10px 20px;
+	transition: .1s;
+	box-shadow:  1px 1px 2px #8baf9d, 
+			 -1px -1px 2px #e0ffef;
+	border: none;
+}
+button:hover{
+	background-color: #65eba4;
+	cursor: pointer;
+}
+
+button.depressed{
+	background-color: #389c67;
+	box-shadow:  inset 1px 1px 2px #2a533f, 
+	inset -1px -1px 2px #4bc586;
+}
+button.depressed:hover{
+	background-color: #389c67;
+	cursor: default;
+}
+
+section, form{
+	margin: 40px;
+}
+
+.error-overlay{
+	height: 100%;
+	width: 100%;
+	z-index: 250;
+	position: absolute;
+	background-color: #38383891;
+}
+
+p.validation-error{
+	font-family: 'Telex', sans-serif;
+	font-size: 11px;
+}
+
+.error-overlay.hidden{
+	display: none;
+}
+
+.error-container{
+	position: absolute;
+	z-index: 300;
+	background-color: #f7f7f7;
+	border-radius: 4px;
+	border: solid 1px #b9b8b8;
+	font-family: 'Telex', sans-serif;
+	text-align: center;
+	padding: 10px;
+	margin: 30vh 25%;
+	width: 50%;
+
+}
+
+.find-partners-page{
+    height: 100;
+}
+
+.tile-view-container{
+    display: flex;
+    padding: 20px;
+    flex-wrap: wrap;
+    justify-content: left;
+    text-align: left;
+}
+.tile-view-container::after {
+    content: '';
+    width: 200px;
+}
+
+
+.swipe-flex-container{
+    display: flex;
+    justify-content: center;
+    margin: 0px 10px;
+}
+.swipe-flex-container>button{
+    background-color: #f7f7f7;
+    box-shadow:  2px 2px 4px #dedede, 
+    -2px -2px 4px #ffffff;
+    vertical-align: middle;
+    height: 30vh;
+    margin-top: 30vh;
+    margin-bottom: 30vh;
+}
+.swipe-flex-container>button:hover{
+    background-color: #f8f8f8;
+    box-shadow:  4px 4px 4px #dedede, 
+    -4px -4px 4px #ffffff;
+}
+
+.arrow{
+    width: 40px;
+}
+
+h2.clickable:hover{
+	cursor: pointer;
+}
+
+
+@media only screen and (max-width: 600px) {
+	.swipe-flex-container{
+		margin-right: 2px;
+		margin-left: 2px;
+
+	}
+	.swipe-flex-container>button{
+		width: 9%;
+		padding: 0px;
+		margin-right: 6px;
+		margin-left: 6px;
+	}
+	button.right{
+		margin-right: 0;
+	}
+	button.left{
+		margin-left: 0;
+	}
+
+
+}

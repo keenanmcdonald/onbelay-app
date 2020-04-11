@@ -1,0 +1,52 @@
+.user-card{
+    background-color: #f7f7f7;
+    border-radius: 4px;
+    width: 33.3%;
+    text-align: center;
+    padding: 14px 0px;
+}
+
+.user-card:hover{
+    background-color: #effffb21;
+    box-shadow:  2px 2px 2px #d3d3d3, 
+    -2px -2px 2px #ffffff;
+    z-index: 2;
+}
+.user-card:hover{
+    cursor: pointer;
+}
+
+.photo-thumbnail{
+    width: 85%;
+    border-radius: 4px;
+}
+
+.user-card-text{
+    margin-left: auto;
+    margin-right: auto;
+    width: 85%;
+    text-align: left;
+}
+
+.user-card-text p{
+    margin-top: 6px;
+    padding: 4px 0px;
+}
+
+.user-card button {
+    width: 80%;
+}
+
+@media only screen and (max-width: 600px) {
+    .user-card{
+        width: 47%;
+        margin: 4px;
+        box-shadow:  2px 2px 4px #dedede, 
+        -2px -2px 4px #ffffff;
+    
+    }
+
+    main.user-cards{
+        padding: 4px;
+    }
+}

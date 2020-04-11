@@ -1,0 +1,22 @@
+.create-account-form, .login-form{
+    margin: 10px 20%;
+    box-shadow:  2px 2px 4px #dedede, 
+    -2px -2px 4px #ffffff;
+    padding: 20px;
+    width: 60%;
+    text-align: left;
+    border-radius: 4px;
+}
+
+button#submit{
+    margin-left: 0px;
+}
+
+#stay-signed-in{
+    margin-left: 0px;
+}
+
+.create-account-form label.stay-signed-in-label, .login-form label.stay-signed-in-label{
+    border-bottom: none;
+    margin-left: 4px;
+}
