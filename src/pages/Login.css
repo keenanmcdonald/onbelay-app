@@ -18,5 +18,5 @@ button#submit{
 
 .create-account-form label.stay-signed-in-label, .login-form label.stay-signed-in-label{
     border-bottom: none;
-    margin-left: 4px;
+    margin-left: 4px; 
 }
