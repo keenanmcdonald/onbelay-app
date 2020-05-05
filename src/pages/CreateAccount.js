@@ -3,6 +3,7 @@ import ApiService from '../services/ApiService'
 import config from '../config'
 import Header from '../components/Header'
 import OBContext from '../OBContext'
+import ScaleLoader from 'react-spinners/ScaleLoader'
 import './CreateAccount.css'
 import './Login.css'
 
@@ -30,6 +31,7 @@ class CreateAccount extends React.Component{
                 touched: false,
             },
             error: '',
+            loading: false,
         }
     }
 
@@ -83,7 +85,7 @@ class CreateAccount extends React.Component{
             email: this.state.email.value,
             password: this.state.password.value
         }
-
+        this.setState({loading: true})
         ApiService.postUser(user, this.context.methods.showError)
             .then(res => {
                 if (res){
@@ -95,6 +97,7 @@ class CreateAccount extends React.Component{
                                 expiryDate.setMonth(expiryDate.getMonth() + 1)
                                 window.localStorage.setItem(config.TOKEN_KEY, res.authToken)
                             }
+                            this.setState({loading: false})
                             this.context.methods.updateUser(res.user)
                             this.props.history.push('/edit_profile')    
                         })
@@ -140,6 +143,10 @@ class CreateAccount extends React.Component{
                                 this.validateRepeatPassword()
                             }
                             >Create</button>
+                        <ScaleLoader
+                            color={'#65EBA4'}
+                            loading={this.state.loading}
+                        />
                     </div>
                 </form>
             </div>
