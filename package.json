@@ -18,7 +18,8 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.3.1",
     "react-select": "^3.0.8",
-    "react-select-input": "^1.0.5"
+    "react-select-input": "^1.0.5",
+    "react-spinners": "^0.8.3"
   },
   "scripts": {
     "start": "react-scripts start",

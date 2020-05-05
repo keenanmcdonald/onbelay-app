@@ -3,6 +3,8 @@ import ApiService from '../services/ApiService'
 import config from '../config'
 import Header from '../components/Header'
 import OBContext from '../OBContext'
+import ScaleLoader from 'react-spinners/ScaleLoader'
+
 import './Login.css'
 
 // eslint-disable-next-line
@@ -30,6 +32,7 @@ class Login extends React.Component{
                 touched: false,
             },
             error: '',
+            loading: false,
         }
     }
 
@@ -77,6 +80,7 @@ class Login extends React.Component{
             email: this.state.email.value,
             password: this.state.password.value
         }
+        this.setState({loading: true})
         ApiService.loginWithCredentials(user, this.context.methods.showError)
             .then(res => {
                 window.localStorage.removeItem(config.TOKEN_KEY)
@@ -86,13 +90,14 @@ class Login extends React.Component{
                     expiryDate.setMonth(expiryDate.getMonth() + 1)
                     window.localStorage.setItem(config.TOKEN_KEY, res.authToken)
                 }
+                this.setState({loading: false})
                 this.context.methods.updateUser(res.user)
                 this.props.history.push('/discover')
             })
             .catch(error => {
+                this.setState({loading: false})
                 this.context.methods.showError(error.message)    
             })
-
     }
     render(){
         return (
@@ -127,6 +132,10 @@ class Login extends React.Component{
                         >
                             Log In
                         </button>
+                        <ScaleLoader
+                            color={'#65EBA4'}
+                            loading={this.state.loading}
+                        />
                     </div>
                 </form>
             </div>

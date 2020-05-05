@@ -20,3 +20,18 @@ button#submit{
     border-bottom: none;
     margin-left: 4px; 
 }
+
+.button-container {
+    height: 50px;
+}
+
+.button-container>* {
+    display: inline-block;
+    position: absolute;
+
+}
+
+.button-container>div {
+    margin-top: 8px;
+    margin-left: 114px;
+}
