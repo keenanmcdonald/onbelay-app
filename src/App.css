@@ -135,6 +135,26 @@ p.validation-error{
     width: 200px;
 }
 
+.no-matches-message-container{
+	text-align: center;
+	margin: 40px 10%;
+}
+
+a {
+    display: inline-block;
+    background-color: #50d890;
+	border-radius: 4px;
+	font-size: 14px;
+	margin: 4px;
+	padding: 4px 8px;
+	transition: .1s;
+	box-shadow:  1px 1px 2px #8baf9d, 
+			 -1px -1px 2px #e0ffef;
+    border: none;
+    color: #272727;
+    text-decoration: none;
+}
+
 
 .swipe-flex-container{
     display: flex;
