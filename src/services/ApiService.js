@@ -241,7 +241,40 @@ const ApiService = {
                 return res.json()
             })
             .catch(res => console.log(res))
-    }
+    },
+    getMessages(user_id, to_id){
+        return fetch(`${config.API_ENDPOINT}/messages/${user_id}/${to_id}`, {
+            method: 'GET',
+            headers: {
+                'content-type': 'application/json',
+                'Authorization': `bearer ${window.sessionStorage.getItem(config.TOKEN_KEY)}`
+            },
+        })
+            .then(res => {
+                if (!res.ok){
+                    throw new Error(res)
+                }
+                return res.json()
+            })
+            .catch(res => console.log(res))
+    },
+    sendMessage(user_id, to_id, content){
+        return fetch(`${config.API_ENDPOINT}/messages/${user_id}/${to_id}`, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+                'Authorization': `bearer ${window.sessionStorage.getItem(config.TOKEN_KEY)}`
+            },
+            body: JSON.stringify({content}),
+        })
+            .then(res => {
+                if (!res.ok){
+                    throw new Error(res)
+                }
+                return res.json()
+            })
+            .catch(res => console.log(res))
+     },
 }
 
 export default ApiService

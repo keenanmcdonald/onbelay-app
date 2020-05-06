@@ -44,11 +44,14 @@ class TileView extends React.Component{
         }
 
         return(
+            <div>
             <div className='tile-view-container'>
-                {userCards.length ? userCards : (
-                    <div className='no-matches-message-container'>
+                {userCards.length ? userCards : ''}
+            </div>
+                {userCards.length ? '' : (
+                <div className='no-matches-message-container'>
                         {noMatchMessage}
-                    </div>
+                </div>
                 )}
             </div>
         )

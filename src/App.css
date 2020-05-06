@@ -53,11 +53,9 @@ main {
 	text-align: center;
 	background-color: #f7f7f7;
 }
-
 .App{
 	height: 100%;
 }
-
 button {
 	background-color: #50d890;
 	border-radius: 4px;

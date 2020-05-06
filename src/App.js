@@ -12,6 +12,7 @@ import ErrorMessage from './components/ErrorMessage'
 import config from './config'
 import './App.css';
 import ApiService from './services/ApiService'
+import Chat from './pages/Chat'
 
 class App extends React.Component {
 
@@ -145,6 +146,7 @@ class App extends React.Component {
           <Route path='/partners' component={MyPartners}/>
           <Route path='/login' component={Login}/>
           <Route path='/user_profile/:user_id' component={UserProfile}/>
+          <Route path='/chat/:id' component={Chat}/>
         </div>
       )
     }
