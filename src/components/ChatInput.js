@@ -5,6 +5,7 @@ function ChatInput(props){
     function handleSubmit(e){
         e.preventDefault()
         props.sendMessage(e.target.input.value)
+        e.target.input.value=''
     }
 
     return (

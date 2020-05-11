@@ -24,12 +24,26 @@ class Chat extends React.Component{
     componentDidMount(){
         this.loadMessages()
         this.getOtherInfo()
+        this.scrollToBottom()
+        this.interval = setInterval(() => this.loadMessages(), 5000);
     }
+
+    componentDidUpdate(){
+        this.scrollToBottom()
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.interval);
+    }
+      
 
     loadMessages(){
         ApiService.getMessages(this.context.user.id, this.props.match.params.id)
             .then(messages => {
-                this.setState({messages})
+                if (messages.length !== this.state.messages.length){
+                    this.scrollToBottom()
+                    this.setState({messages})
+                }
             })
     }
 
@@ -47,6 +61,10 @@ class Chat extends React.Component{
             })
     }
 
+    scrollToBottom(){
+        this.messagesEnd.scrollIntoView({behavior: "smooth"})
+    }
+
     render(){
         const messages = []
 
@@ -62,6 +80,7 @@ class Chat extends React.Component{
                     <ChatHeader {...this.state.other}/>
                     <div className='chat-messages'>
                         {messages}
+                        <div style={{float:"left", clear: "both"}} ref={(el) => {this.messagesEnd = el}}></div>
                     </div>
                     <ChatInput sendMessage={(content) => this.sendMessage(content)}/>
                 </div>
