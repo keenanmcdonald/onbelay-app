@@ -15,8 +15,9 @@ class Chat extends React.Component{
         super(props)
 
         this.state = {
+            partners: [],
             messages: [],
-            other: {}
+            other: {},
         }
 
         this.sendMessage = this.sendMessage.bind(this)
@@ -25,6 +26,7 @@ class Chat extends React.Component{
         this.loadMessages()
         this.getOtherInfo()
         this.scrollToBottom()
+        this.loadPartners()
         this.interval = setInterval(() => this.loadMessages(), 5000);
     }
 
@@ -61,29 +63,58 @@ class Chat extends React.Component{
             })
     }
 
+    loadPartners(){
+        this.context.methods.loadPartners()
+            .then(partners => {
+                console.log('partners: ', partners)
+                this.setState({partners})
+            })
+    }
+
     scrollToBottom(){
         this.messagesEnd.scrollIntoView({behavior: "smooth"})
     }
 
     render(){
         const messages = []
+        const partners = []
 
         for (let i = 0; i < this.state.messages.length; i++){
             messages.push(
                 <ChatMessage key={i} fromUser={this.state.messages[i].from_id === this.context.user.id}{...this.state.messages[i]}/>
             )
         }
+
+        for (let i = 0; i < this.state.partners.length; i++){
+            partners.push(
+                <div className='partner-select' id={this.state.partners[i].id} key={this.state.partners[i].id}>
+                    <img className='chat-photo partner' src={this.state.partners[i].photo_url} alt='partner'></img>
+                    <h3 className='partner-name'>{this.state.partners[i].name}</h3>
+                    <p className='last-message'>{}</p> 
+                </div>
+            )
+        }
+
         return (
             <div className='chat-page'>
                 <Header pageTitle='Messages' match={this.props.match} history={this.props.history} displayNav={true} />
-                <div className='chat-window'>
-                    <ChatHeader {...this.state.other}/>
-                    <div className='chat-messages'>
-                        {messages}
-                        <div style={{float:"left", clear: "both"}} ref={(el) => {this.messagesEnd = el}}></div>
+                <main className='messages-main'>
+                    <div className='sidepanel'>
+                        <h2>Partners</h2>
+                        <ul>
+                            {partners}
+                        </ul>
                     </div>
-                    <ChatInput sendMessage={(content) => this.sendMessage(content)}/>
-                </div>
+                    <div className='chat-window'>
+                        <ChatHeader {...this.state.other}/>
+                        <div className='chat-messages'>
+                            {messages}
+                            <div style={{float:"left", clear: "both"}} ref={(el) => {this.messagesEnd = el}}></div>
+                        </div>
+                        <ChatInput sendMessage={(content) => this.sendMessage(content)}/>
+                    </div>
+
+                </main>
             </div>
         )
     }

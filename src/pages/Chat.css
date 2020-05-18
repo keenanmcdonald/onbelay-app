@@ -1,12 +1,19 @@
+.messages-main{
+    display: flex;
+}
+
+.sidepanel{
+    flex: 1;
+    width: 100%;
+}
+
 .chat-window{
-    margin: 16px 20%;
-    box-shadow:  2px 2px 4px #dedede, 
-    -2px -2px 4px #ffffff;
+	box-shadow:  inset 1px 1px 1px #abb1a8;
     padding: 20px;
-    width: 60%;
+    width: 100%;
     text-align: left;
-    border-radius: 4px;
     height: 88vh;
+    flex: 2;
 }
 
 .chat-messages{
@@ -93,6 +100,28 @@ button.chat-send{
     box-shadow:  1px 1px 2px #a1a1a1, 
     -1px -1px 2px #ffffff;
     object-fit: cover;
+}
+
+.chat-photo.partner{
+    height: 40px;
+    width: 40px;
+    float: left;
+}
+
+
+.partner-select{
+    height: 60px;
+    border-radius: 4px;
+    background-color: #f7f7f7;
+    z-index: 0;
+    padding: 10px;
+}
+
+.partner-select:hover{
+    background-color: #effffb21;
+    box-shadow:  2px 2px 2px #d3d3d3, 
+    -2px -2px 2px #ffffff;
+    z-index: 2;
 }
 
 h3.name{

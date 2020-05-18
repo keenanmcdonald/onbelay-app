@@ -35,6 +35,10 @@ class Profile extends React.Component{
         this.props.history.push('/edit_profile')
     }
 
+    goToChat(){
+        this.props.history.push(`/chat/${this.props.id}`)
+    }
+
     handlePartnerRequest(){
         ApiService.createPartnerRequest(this.context.user.id, this.props.id)
             .then(() => {
@@ -56,11 +60,8 @@ class Profile extends React.Component{
         if (this.props.partner){
             content = (            
                 <div className='partner-content'>
-                    <div className='profile-element'>
-                        <label htmlFor='phone'>Phone</label>
-                        <p className='phone'>{this.props.phone}</p>
-                    </div>
                     <div className='profile-button-container'>
+                        <button className='chat-button' onClick={() => this.goToChat()}>Chat</button>
                         <BlockButton id={this.props.id} history={this.props.history} match={this.props.match}/>
                     </div>
                 </div>

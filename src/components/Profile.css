@@ -5,7 +5,7 @@ body{
 .user-profile{
     box-shadow:  2px 2px 4px #dedede, 
     -2px -2px 4px #ffffff;
-    padding: 20px;
+    padding: 6px 20px;
     padding-top: 6px;
     width: 80vh;
     text-align: left;
@@ -38,7 +38,9 @@ h1.name{
 
 .profile-button-container button{
     margin-left: 0px;
-    display: inline;
+    width: 50%;
+    height: 60px;
+    font-size: 16px;
 }
 .profile-button-container{
     display: flex;
