@@ -242,8 +242,8 @@ const ApiService = {
             })
             .catch(res => console.log(res))
     },
-    getMessages(user_id, to_id){
-        return fetch(`${config.API_ENDPOINT}/messages/${user_id}/${to_id}`, {
+    getMessages(user_id){
+        return fetch(`${config.API_ENDPOINT}/messages/${user_id}`, {
             method: 'GET',
             headers: {
                 'content-type': 'application/json',

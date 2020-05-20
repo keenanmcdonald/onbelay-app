@@ -106,6 +106,7 @@ button.chat-send{
     height: 40px;
     width: 40px;
     float: left;
+    margin-right: 30px;
 }
 
 
@@ -114,7 +115,24 @@ button.chat-send{
     border-radius: 4px;
     background-color: #f7f7f7;
     z-index: 0;
-    padding: 10px;
+    padding: 10px 30px;
+    cursor: pointer;
+}
+
+.partner-select>*{
+    text-align: left;
+}
+
+.partner-select>h3{
+    font-weight: 800;
+}
+
+.last-message.from{
+    color: rgb(105, 148, 125);
+}
+
+.last-message.to{
+    color: rgb(88, 114, 133);
 }
 
 .partner-select:hover{

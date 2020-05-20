@@ -146,7 +146,7 @@ class App extends React.Component {
           <Route path='/partners' component={MyPartners}/>
           <Route path='/login' component={Login}/>
           <Route path='/user_profile/:user_id' component={UserProfile}/>
-          <Route path='/chat/:id' component={Chat}/>
+          <Route path='/chat/' component={Chat}/>
         </div>
       )
     }
