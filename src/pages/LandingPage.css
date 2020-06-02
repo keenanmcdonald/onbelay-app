@@ -1,9 +1,9 @@
 
 .landing-page main{
-    width: 70%;
+    width: 50%;
     margin: 16px auto;
     padding: 10px;
-    text-align: left;
+    text-align: center;
     background-color: #f7f7f7;
     box-shadow:  2px 2px 4px #dedede, 
     -2px -2px 4px #ffffff;
@@ -16,7 +16,7 @@
 }
 
 .landing-page a {
-    display: inline-block;
+    display: block;
     background-color: #50d890;
 	border-radius: 4px;
 	font-size: 14px;
