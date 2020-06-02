@@ -7,7 +7,6 @@ import EditProfile from './pages/EditProfile'
 import Discover from './pages/Discover'
 import MyPartners from './pages/MyPartners'
 import UserProfile from './pages/UserProfile'
-import Login from './pages/Login'
 import ErrorMessage from './components/ErrorMessage'
 import config from './config'
 import './App.css';
@@ -143,7 +142,6 @@ class App extends React.Component {
           <Route path='/edit_profile' component={EditProfile}/>
           <Route path='/discover' component={Discover}/>
           <Route path='/partners' component={MyPartners}/>
-          <Route path='/login' component={Login}/>
           <Route path='/user_profile/:user_id' component={UserProfile}/>
         </div>
       )
@@ -153,7 +151,6 @@ class App extends React.Component {
         <div>
           <Route exact path='/' component={LandingPage}/>
           <Route path='/create_account' component={CreateAccount}/>
-          <Route path='/login' component={Login}/>
         </div>
       )
     }

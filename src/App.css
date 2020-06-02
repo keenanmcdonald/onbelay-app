@@ -140,7 +140,7 @@ p.validation-error{
 	margin: 40px 10%;
 }
 
-a {
+a.inline-link {
     display: inline-block;
     background-color: #50d890;
 	border-radius: 4px;

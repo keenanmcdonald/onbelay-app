@@ -37,10 +37,10 @@ class TileView extends React.Component{
         const userCards = this.generateCards(this.state.users)
         let noMatchMessage = ''
         if (this.props.partner){
-            noMatchMessage = <p className='no-matches-message'>You don't seem to have any partners, go to the <Link to='/discover'>discover page</Link> and request some partners.</p>
+            noMatchMessage = <p className='no-matches-message'>You don't seem to have any partners, go to the <Link className='inline-link' to='/discover'>discover page</Link> and request some partners.</p>
         }
         else{
-            noMatchMessage = <p className='no-matches-message'>You don't seem to have any matches. Try adjusting your search criteria from the <Link to='/edit_profile'>edit profile page</Link>.</p>
+            noMatchMessage = <p className='no-matches-message'>You don't seem to have any matches. Try adjusting your search criteria from the <Link className='inline-link' to='/edit_profile'>edit profile page</Link>.</p>
         }
 
         return(

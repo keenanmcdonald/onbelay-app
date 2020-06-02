@@ -2,7 +2,7 @@
 .landing-page main{
     width: 50%;
     margin: 16px auto;
-    padding: 10px;
+    padding: 10px 40px;
     text-align: center;
     background-color: #f7f7f7;
     box-shadow:  2px 2px 4px #dedede, 
@@ -11,16 +11,17 @@
 }
 
 .landing-page p{
-    margin: 20px;
-    margin-left: 0px;
+    margin: 10px 0px;
+    font-size: 12px;
 }
 
-.landing-page a {
-    display: block;
+.landing-page button{
+    height: 40px;
+    width: 100%;
+    margin: 4px;
     background-color: #50d890;
 	border-radius: 4px;
-	font-size: 14px;
-	margin: 4px;
+	font-size: 16px;
 	padding: 4px 8px;
 	transition: .1s;
 	box-shadow:  1px 1px 2px #8baf9d, 
@@ -30,18 +31,31 @@
     text-decoration: none;
 }
 
-.landing-page a:hover {
-    display: inline-block;
-    background-color: #58eb9c;
-	border-radius: 4px;
-	font-size: 14px;
-	margin: 4px;
-	padding: 4px 8px;
-	transition: .1s;
-	box-shadow:  2px 2px 3px #8baf9d, 
-			 -2px -2px 3px #e0ffef;
-    border: none;
-    color: #272727;
-    text-decoration: none;
- 
+h2.onbelay-title{
+    font-size: 34px;
+    display: block;
+    font-family: 'Lily Script One', cursive;
+}
+
+main .figure-eight-logo {
+    height: 50px;
+    margin-left: 8px;
+}
+
+.create-account-form, .login-form{
+    margin: 0px;
+    text-align: left;
+}
+
+form .form-elements{
+    margin: 0px;
+}
+
+#stay-signed-in{
+    margin-left: 0px;
+}
+
+.create-account-form label.stay-signed-in-label, .login-form label.stay-signed-in-label{
+    border-bottom: none;
+    margin-left: 4px; 
 }

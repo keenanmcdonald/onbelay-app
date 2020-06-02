@@ -5,7 +5,7 @@ import Header from '../components/Header'
 import OBContext from '../OBContext'
 import ScaleLoader from 'react-spinners/ScaleLoader'
 import './CreateAccount.css'
-import './Login.css'
+import './LandingPage.css'
 
 // eslint-disable-next-line
 const REGEX_EMAIL_VALIDATION = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
