@@ -5,6 +5,7 @@ import config from '../config'
 import OBContext from '../OBContext'
 import {Link} from 'react-router-dom'
 import ScaleLoader from 'react-spinners/ScaleLoader'
+import FacebookLogin from 'react-facebook-login'
 import '../stylesheets/LandingPage.css'
 
 // eslint-disable-next-line
@@ -46,6 +47,10 @@ class LandingPage extends React.Component{
     }
     updateStaySignedIn(staySignedIn){
         this.setState({staySignedIn})
+    }
+
+    responseFacebook = (response) => {
+        console.log(response)
     }
 
     validatePassword(){
@@ -152,6 +157,11 @@ class LandingPage extends React.Component{
                         </div>
                     </form>
                     <Link to='/create_account'><button className='landing-page-button'>Sign up</button></Link>
+                    <FacebookLogin
+                        appId="2463742723728211"
+                        autoLoad={true}
+                        fields="name,email,picture"
+                        callback={this.responseFacebook} />
                 </main> 
             </div> 
         )

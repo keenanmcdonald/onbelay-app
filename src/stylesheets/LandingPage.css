@@ -64,3 +64,16 @@ p.validation-error{
 	font-family: 'Telex', sans-serif;
 	font-size: 11px;
 }
+
+button.kep-login-facebook{
+    background-color: rgb(71, 112, 194);
+    box-shadow:  1px 1px 2px rgb(43, 68, 117), 
+    -1px -1px 2px rgb(145, 181, 253);
+    border-radius: 4px !important;
+}
+button.kep-login-facebook:hover{
+    background-color: rgb(81, 128, 223);
+    box-shadow:  1px 1px 2px rgb(43, 68, 117), 
+    -1px -1px 2px rgb(88, 140, 243);
+    border-radius: 4px;
+}
