@@ -116,6 +116,7 @@ button.chat-send{
     z-index: 0;
     padding: 10px 30px;
     cursor: pointer;
+    overflow-wrap: break-word;
 }
 
 .partner-select>*{
@@ -124,6 +125,12 @@ button.chat-send{
 
 .partner-select>h3{
     font-weight: 800;
+}
+
+.last-message{
+    height: 28px;
+    font-size: 12px;
+    overflow-y: hidden;
 }
 
 .last-message.from{
