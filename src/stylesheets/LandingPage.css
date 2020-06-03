@@ -64,3 +64,9 @@ p.validation-error{
 	font-family: 'Telex', sans-serif;
 	font-size: 11px;
 }
+
+@media only screen and (max-width: 600px) {
+    .landing-page main, .create-account-page main{
+        width: 80%;
+    }
+}
