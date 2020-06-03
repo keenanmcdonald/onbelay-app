@@ -4,8 +4,7 @@ import config from '../config'
 import Header from '../components/Header'
 import OBContext from '../OBContext'
 import ScaleLoader from 'react-spinners/ScaleLoader'
-import './CreateAccount.css'
-import './LandingPage.css'
+import '../stylesheets/LandingPage.css'
 
 // eslint-disable-next-line
 const REGEX_EMAIL_VALIDATION = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
@@ -109,46 +108,58 @@ class CreateAccount extends React.Component{
         return (
             <div className='create-account-page'>
                 <Header match={this.props.match} pageTitle='Create Account' history={this.props.history} displayNav={false}/>
-                <form className='create-account-form'>
-                    <div className='form-elements'>
-                        <div className='form-element'>
-                            <label htmlFor='email'>email</label>
-                            <input className='input' name='email' id='email' type='text' onChange={e=> this.updateEmail(e.target.value)}/>
-                            <p className='validation-error'>{this.state.email.touched ? this.validateEmail() : ''}</p>
-                        </div>
-                        <div className='form-element'>
-                            <label htmlFor='password'>password</label>
-                            <input className='input' name='password' id='password' type='password' onChange={e => this.updatePassword(e.target.value)}/>
-                            <p className='validation-error'>{this.state.password.touched ? this.validatePassword() : ''}</p>
+                <main>
+                    <div className='logo-container'>
+                        <img className='figure-eight-logo' src={require('../images/figure-eight-logo-black.png')} alt='figure eight logo'/>
+                        <h2 className='onbelay-title'>onBelay</h2>
+                    </div>
+                    <form className='create-account-form'>
+                        <div className='form-elements'>
+                            <div className='form-element'>
+                                <label htmlFor='email'>email</label>
+                                <input className='input-block' name='email' id='email' type='text' onChange={e=> this.updateEmail(e.target.value)}/>
+                                <p className='validation-error'>{this.state.email.touched ? this.validateEmail() : ''}</p>
+                            </div>
+                            <div className='form-element'>
+                                <label htmlFor='password'>password</label>
+                                <input className='input-block' name='password' id='password' type='password' onChange={e => this.updatePassword(e.target.value)}/>
+                                <p className='validation-error'>{this.state.password.touched ? this.validatePassword() : ''}</p>
 
+                            </div>
+                            <div className='form-element'>
+                                <label htmlFor='repeatPassword'>repeat password</label>
+                                <input className='input-block' name='repeatPassword' id='repeatPassword' type='password' onChange={e => this.updateRepeatPassword(e.target.value)}/>
+                                <p className='validation-error'>{this.state.repeatPassword.touched ? this.validateRepeatPassword() : ''}</p>
+                            </div>
+                            <div className='form-element'>
+                                <input name='staySignedIn' id='stay-signed-in' type='checkbox' onChange={e => this.updateStaySignedIn(e.target.value)}/>
+                                <label htmlFor='staySignedIn' className='stay-signed-in-label'>stay signed in</label>
+                            </div>
                         </div>
-                        <div className='form-element'>
-                            <label htmlFor='repeatPassword'>repeat password</label>
-                            <input className='input' name='repeatPassword' id='repeatPassword' type='password' onChange={e => this.updateRepeatPassword(e.target.value)}/>
-                            <p className='validation-error'>{this.state.repeatPassword.touched ? this.validateRepeatPassword() : ''}</p>
+                        <div className='button-container'>
+                            <button 
+                                className={
+                                    this.validateEmail() || this.validatePassword() || this.validateRepeatPassword() ? 'disabled' : ''
+                                }
+                                id='submit' 
+                                type='submit' 
+                                onClick={e => this.submitForm(e)}
+                                disabled={
+                                    this.validateEmail() || 
+                                    this.validatePassword() ||
+                                    this.validateRepeatPassword()
+                                }
+                                >
+                                    {this.state.loading ? '' : 'Create'}
+                                    <ScaleLoader
+                                        color={'#272727'}
+                                        loading={this.state.loading}
+                                    />
+                                </button>
+                            
                         </div>
-                        <div className='form-element'>
-                            <input name='staySignedIn' id='stay-signed-in' type='checkbox' onChange={e => this.updateStaySignedIn(e.target.value)}/>
-                            <label htmlFor='staySignedIn' className='stay-signed-in-label'>stay signed in</label>
-                        </div>
-                    </div>
-                    <div className='button-container'>
-                        <button 
-                            id='submit' 
-                            type='submit' 
-                            onClick={e => this.submitForm(e)}
-                            disabled={
-                                this.validateEmail() || 
-                                this.validatePassword() ||
-                                this.validateRepeatPassword()
-                            }
-                            >Create</button>
-                        <ScaleLoader
-                            color={'#65EBA4'}
-                            loading={this.state.loading}
-                        />
-                    </div>
-                </form>
+                    </form>
+                </main>
             </div>
         )
     }

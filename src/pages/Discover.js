@@ -5,6 +5,7 @@ import Header from '../components/Header'
 import OBContext from '../OBContext'
 import TileView from '../components/TileView'
 import SwipeView from '../components/SwipeView'
+import '../stylesheets/Discover.css'
 
 
 class Discover extends React.Component{

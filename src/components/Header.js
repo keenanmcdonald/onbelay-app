@@ -1,5 +1,5 @@
 import React from 'react'
-import './Header.css';
+import '../stylesheets/Header.css';
 import UserNavButton from './UserNavButton'
 import NavButton from './NavButton'
 import OBContext from '../OBContext'

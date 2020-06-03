@@ -1,5 +1,5 @@
 import React from 'react'
-import {Route, Redirect} from 'react-router-dom'
+import {Route, Redirect, Switch} from 'react-router-dom'
 import OBContext from './OBContext'
 import LandingPage from './pages/LandingPage'
 import CreateAccount from './pages/CreateAccount'
@@ -9,7 +9,7 @@ import MyPartners from './pages/MyPartners'
 import UserProfile from './pages/UserProfile'
 import ErrorMessage from './components/ErrorMessage'
 import config from './config'
-import './App.css';
+import './stylesheets/App.css';
 import ApiService from './services/ApiService'
 
 class App extends React.Component {
@@ -132,26 +132,43 @@ class App extends React.Component {
 
     let content;
 
-    if (this.state.user.email){
+    if (this.state.user.name){
       content = (
-        <div>
+        <Switch>
           <Route exact path='/'>
             <Redirect to='/discover' />
           </Route>
           <Route path='/create_account' component={CreateAccount}/>
-          <Route path='/edit_profile' component={EditProfile}/>
           <Route path='/discover' component={Discover}/>
           <Route path='/partners' component={MyPartners}/>
+          <Route path='/edit_profile' component={EditProfile}/>
           <Route path='/user_profile/:user_id' component={UserProfile}/>
-        </div>
+          <Route path='/login' component={LandingPage}/>
+          <Redirect from='*' to='/'/>
+        </Switch>
+      )
+    }
+    else if (this.state.user.email){
+      content = (
+        <Switch>
+          <Route exact path='/'>
+            <Redirect to='/login' />
+          </Route>
+          <Route path='/create_account' component={CreateAccount}/>
+          <Route path='/edit_profile' component={EditProfile}/>
+          <Route path='/login' component={LandingPage}/>
+          <Redirect from='*' to='/'/>
+        </Switch>
       )
     }
     else{
       content = (
-        <div>
+        <Switch>
           <Route exact path='/' component={LandingPage}/>
+          <Route path='/login' component={LandingPage}/>
           <Route path='/create_account' component={CreateAccount}/>
-        </div>
+          <Redirect from='*' to='/'/>
+        </Switch>
       )
     }
 

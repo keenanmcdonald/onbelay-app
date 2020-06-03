@@ -5,15 +5,10 @@ import Header from '../components/Header'
 import TileView from '../components/TileView'
 import SwipeView from '../components/SwipeView'
 import OBContext from '../OBContext'
+import '../stylesheets/Discover.css'
 
 class MyPartners extends React.Component{
     static contextType = OBContext
-
-    componentDidMount(){
-        /*if (isMobile){
-            this.props.history.push('/partners/swipe/0')
-        }*/
-    }
 
     render(){
         return(

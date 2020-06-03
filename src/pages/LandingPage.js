@@ -5,7 +5,7 @@ import config from '../config'
 import OBContext from '../OBContext'
 import {Link} from 'react-router-dom'
 import ScaleLoader from 'react-spinners/ScaleLoader'
-//import './LandingPage.css'
+import '../stylesheets/LandingPage.css'
 
 // eslint-disable-next-line
 const REGEX_EMAIL_VALIDATION = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
@@ -70,8 +70,6 @@ class LandingPage extends React.Component{
         }
     }
 
-
-
     submitForm(e){
         e.preventDefault()
 
@@ -91,7 +89,12 @@ class LandingPage extends React.Component{
                 }
                 this.setState({loading: false})
                 this.context.methods.updateUser(res.user)
-                this.props.history.push('/discover')
+                if (res.user.name){
+                    this.props.history.push('/discover')
+                }
+                else{
+                    this.props.history.push('/edit_profile')
+                }
             })
             .catch(error => {
                 this.setState({loading: false})
@@ -104,7 +107,7 @@ class LandingPage extends React.Component{
             <div className='landing-page'>
                 <Header match={this.props.match} pageTitle='' history={this.props.history} displayNav={false} loginLink={true}/>
                 <main>
-                    <div className='logo-container' onClick={() => this.handleLogoClick()}>
+                    <div className='logo-container'>
                         <img className='figure-eight-logo' src={require('../images/figure-eight-logo-black.png')} alt='figure eight logo'/>
                         <h2 className='onbelay-title'>onBelay</h2>
                     </div>
@@ -113,12 +116,12 @@ class LandingPage extends React.Component{
                         <div className='form-elements'>
                             <div className='form-element'>
                                 <label htmlFor='email'>email</label>
-                                <input className='input' name='email' id='email' type='text' onChange={e=> this.updateEmail(e.target.value)}/>
+                                <input className='input-block' name='email' id='email' type='text' onChange={e=> this.updateEmail(e.target.value)}/>
                                 <p className='validation-error'>{this.state.email.touched ? this.validateEmail() : ''}</p>
                             </div>
                             <div className='form-element'>
                                 <label htmlFor='password'>password</label>
-                                <input className='input' name='password' id='password' type='password' onChange={e => this.updatePassword(e.target.value)}/>
+                                <input className='input-block' name='password' id='password' type='password' onChange={e => this.updatePassword(e.target.value)}/>
                                 <p className='validation-error'>{this.state.password.touched ? this.validatePassword() : ''}</p>
                             </div>
                             <div className='form-element'>
@@ -128,20 +131,24 @@ class LandingPage extends React.Component{
                         </div>
                         <div className='button-container'>
                             <button 
-                                className='landing-page-button'
+                                className={`
+                                    landing-page-button
+                                    ${this.validateEmail() || this.validatePassword() ? 'disabled' : ''}
+                                `}
                                 type='submit' 
                                 onClick={e => this.submitForm(e)}
                                 disabled={
                                         this.validateEmail() || 
                                         this.validatePassword()
                                     }
+                                
                             >
-                                Log In
+                                {this.state.loading ? '' : 'Log in'}
+                                <ScaleLoader
+                                    color={'#272727'}
+                                    loading={this.state.loading}
+                                />
                             </button>
-                            <ScaleLoader
-                                color={'#65EBA4'}
-                                loading={this.state.loading}
-                            />
                         </div>
                     </form>
                     <Link to='/create_account'><button className='landing-page-button'>Sign up</button></Link>

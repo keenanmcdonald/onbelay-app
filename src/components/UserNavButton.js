@@ -1,6 +1,6 @@
 import React from 'react'
 import OBContext from '../OBContext'
-import './NavButton.css'
+import '../stylesheets/NavButton.css'
 
 class UserNavButton extends React.Component {
     static contextType = OBContext

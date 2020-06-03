@@ -1,6 +1,5 @@
 import React from 'react'
 import Cropper from 'react-easy-crop'
-import './ImageCropper.css'
 
 class ImageCropper extends React.Component {
     constructor(props){

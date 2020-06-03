@@ -1,0 +1,71 @@
+
+.find-partners-page{
+    height: 100;
+}
+
+.tile-view-container{
+    display: flex;
+    padding: 20px;
+    flex-wrap: wrap;
+    justify-content: left;
+    text-align: left;
+}
+.tile-view-container::after {
+    content: '';
+    width: 200px;
+}
+
+.no-matches-message-container{
+	text-align: center;
+	margin: 40px 10%;
+}
+
+.swipe-flex-container{
+    display: flex;
+    justify-content: center;
+    margin: 0px 10px;
+}
+.swipe-flex-container>button{
+    background-color: #f7f7f7;
+    box-shadow:  2px 2px 4px #dedede, 
+    -2px -2px 4px #ffffff;
+    vertical-align: middle;
+    height: 30vh;
+    margin-top: 30vh;
+    margin-bottom: 30vh;
+}
+.swipe-flex-container>button:hover{
+    background-color: #f8f8f8;
+    box-shadow:  4px 4px 4px #dedede, 
+    -4px -4px 4px #ffffff;
+}
+
+.arrow{
+    width: 40px;
+}
+
+h2.clickable:hover{
+	cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+	.swipe-flex-container{
+		margin-right: 2px;
+		margin-left: 2px;
+
+	}
+	.swipe-flex-container>button{
+		width: 9%;
+		padding: 0px;
+		margin-right: 6px;
+		margin-left: 6px;
+	}
+	button.right{
+		margin-right: 0;
+	}
+	button.left{
+		margin-left: 0;
+	}
+
+
+}

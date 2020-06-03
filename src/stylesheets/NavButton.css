@@ -22,7 +22,6 @@
     inset -1px -1px 2px #444444;
 }
 
-
 .nav-thumbnail{
     height: 32px;
     width: 32px;
@@ -79,22 +78,6 @@
 
 .nav-button, .nav-button:hover {
     box-shadow: none;
-}
-
-.nav-button-title{
-    color: transparent;
-    visibility: hidden;
-    transition: .2s;
-    height: 40px;
-    vertical-align: middle;
-    margin: 0px 1px;
-    font-size: 10px;
-    display: inline-block;
-}
-
-.nav-button-container:hover .nav-button-title{
-    visibility: visible;
-    color: #f7f7f7;
 }
 
 @media only screen and (max-width: 600px) {

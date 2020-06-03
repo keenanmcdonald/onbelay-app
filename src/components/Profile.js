@@ -3,7 +3,7 @@ import ApiService from '../services/ApiService'
 import OBContext from '../OBContext'
 import LetsClimbButton from '../components/LetsClimbButton'
 import BlockButton from './BlockButton'
-import './Profile.css'
+import '../stylesheets/Profile.css'
 
 
 class Profile extends React.Component{
@@ -102,7 +102,7 @@ class Profile extends React.Component{
                 <div className='photo-container'>
                     <img className='profile-photo' src={this.props.photo_url} alt='user profile'/>
                 </div>
-                <h1 className='name'>{this.props.name}</h1>
+                <h3 className='name'>{this.props.name}</h3>
                 <div className='profile-element'>
                     <label htmlFor='bio'>about</label>
                     <p className='bio'>{this.props.bio}</p>

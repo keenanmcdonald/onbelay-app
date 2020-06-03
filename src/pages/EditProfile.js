@@ -6,7 +6,7 @@ import getCroppedImg from '../services/CropImage'
 import ApiService from '../services/ApiService'
 import FileService from '../services/FileService'
 import OBContext from '../OBContext'
-import './EditProfile.css'
+import '../stylesheets/EditProfile.css'
 
 const {GRADES} = require('../constants')
 
@@ -168,20 +168,20 @@ class EditProfile extends React.Component{
                     <div className='form-elements'>
                         <div className='form-element'>
                             <label htmlFor='photo'>profile photo</label>
-                            <input className='input' type='file' id='photo' name='photo' onChange={e=> this.updatePhoto(e.target.files[0])} ref={ref=> this.fileInput = ref}/>
+                            <input className='input-block' type='file' id='photo' name='photo' onChange={e=> this.updatePhoto(e.target.files[0])} ref={ref=> this.fileInput = ref}/>
                             {this.state.photo_url ? <img className='edit-profile-photo' src={this.state.photo_url} alt='current profile pic'/> : ''}
                         </div>
                         <div className='form-element'>
                             <label htmlFor='name'>name</label>
-                            <input className='input' type='text' id='name' name='name' defaultValue={this.state.name} onChange={e=> this.updateName(e.target.value)}/>
+                            <input className='input-block' type='text' id='name' name='name' defaultValue={this.state.name} onChange={e=> this.updateName(e.target.value)}/>
                         </div>
                         <div className='form-element'>
                             <label htmlFor='bio'>about</label>
-                            <textarea className='input' id='bio' name='bio' defaultValue={this.state.bio} onChange={e => this.updateBio(e.target.value)}></textarea>
+                            <textarea className='input-block' id='bio' name='bio' defaultValue={this.state.bio} onChange={e => this.updateBio(e.target.value)}></textarea>
                         </div>
                         <div className='form-element'>
                             <label htmlFor='styles'>styles</label>
-                            <div className='styles input'>
+                            <div className='styles input-block'>
                                 <div className='styles-checkbox'>
                                     <input id='sport' name='sport' type='checkbox' value='sport' checked={this.state.sport} onChange={e => this.updateStyles(e.target.value)}/>
                                     <label htmlFor='sport' className='sub-label'>sport</label>
@@ -194,33 +194,33 @@ class EditProfile extends React.Component{
                         </div>
                         <div className='form-element'>
                             <label htmlFor='max-grade'>highest redpoint</label>
-                            <div id='redpoint' className='input'>
-                                <select className='input grade-dropdown' id='max-grade' onChange={e => this.updateMaxGrade(e.target.value)} value={this.state.max_grade}>
+                            <div id='redpoint' className='input-block'>
+                                <select className='input-block grade-dropdown' id='max-grade' onChange={e => this.updateMaxGrade(e.target.value)} value={this.state.max_grade}>
                                     {this.state.gradeOptions}
                                 </select>
                             </div>
                         </div>
                         <div className='form-element'>
                             <label htmlFor='phone'>phone (will be visible to your partners as a form of contact)</label>
-                            <div className='input'>
+                            <div className='input-block'>
                                 <input id='phone' type='text' defaultValue={this.state.phone} onChange={e => this.updatePhone(e.target.value)}/>
                             </div>
                         </div> 
                         <div className='form-element seeking-block'>
                             <label htmlFor='grade-inputs'>seeking partners that...</label>
                             <div className='seeking-inputs'>
-                                <div className='input'>
+                                <div className='input-block'>
                                     <span>climb at least</span>
-                                    <select className='input grade-dropdown' id='min-grade' onChange={e => this.updateMinGrade(e.target.value)} value={this.state.min_grade}>
+                                    <select className='input-block grade-dropdown' id='min-grade' onChange={e => this.updateMinGrade(e.target.value)} value={this.state.min_grade}>
                                         {this.state.gradeOptions}
                                     </select>
                                 </div>
-                                <div id='radius-input-container' className='input'>
+                                <div id='radius-input-container' className='input-block'>
                                     <span>within</span>
                                     <input id='radius' name='radius' type='number' defaultValue={this.state.radius} onChange={e => this.updateRadius(e.target.value)}/>
                                     <span>miles of...</span>
                                 </div>
-                                <div className='input'>
+                                <div className='input-block'>
                                     <LocationSearchInput updateLocation={(address, location) => this.updateLocation(address, location)} address={this.state.address}/>
                                 </div>
                             </div>

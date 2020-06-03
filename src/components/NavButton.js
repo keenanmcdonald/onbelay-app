@@ -1,5 +1,5 @@
 import React from 'react'
-import './NavButton.css'
+import '../stylesheets/NavButton.css'
 
 class NavButton extends React.Component {
 

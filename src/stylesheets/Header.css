@@ -11,13 +11,6 @@ header{
     text-align: center;
 }
 
-a.login-link {
-    display: inline-block;
-    color: #f7f7f7;
-    font-family: 'Telex', sans-serif;
-    margin: 8px;
-}
-
 .page-title-container{
     padding: 10px 0%;
     position: absolute;
@@ -42,7 +35,7 @@ header .figure-eight-logo{
     display: inline-block;
 }
 
-h1.onbelay-title{
+header .onbelay-title{
     font-family: 'Lily Script One', cursive;
     display: inline-block;
     margin-left: 60px;

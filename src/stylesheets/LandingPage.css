@@ -1,5 +1,5 @@
 
-.landing-page main{
+.landing-page main, .create-account-page main{
     width: 50%;
     margin: 16px auto;
     padding: 10px 40px;
@@ -15,8 +15,8 @@
     font-size: 12px;
 }
 
-.landing-page button{
-    height: 40px;
+.landing-page button, .create-account-page button{
+    height: 46px;
     width: 100%;
     margin: 4px;
     background-color: #50d890;
@@ -47,8 +47,8 @@ main .figure-eight-logo {
     text-align: left;
 }
 
-form .form-elements{
-    margin: 0px;
+.form-element{
+    margin-bottom: 10px;
 }
 
 #stay-signed-in{
@@ -58,4 +58,9 @@ form .form-elements{
 .create-account-form label.stay-signed-in-label, .login-form label.stay-signed-in-label{
     border-bottom: none;
     margin-left: 4px; 
+}
+
+p.validation-error{
+	font-family: 'Telex', sans-serif;
+	font-size: 11px;
 }

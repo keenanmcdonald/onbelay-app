@@ -1,5 +1,5 @@
 import React from 'react'
-import './UserCard.css'
+import '../stylesheets/UserCard.css'
 
 function UserCard(props){
     let styles = []
@@ -25,7 +25,7 @@ function UserCard(props){
         <div className='user-card' onClick={() => handleClick()}>
             <img className='photo-thumbnail' alt='profile thumbnail' src={props.photo_url}/>
             <div className='user-card-text'>
-                <h1 className='name'>{props.name}</h1>
+                <h3 className='name'>{props.name}</h3>
                 <p className='styles'>{styles}</p>
                 <p className='redpoint'>{props.max_grade}</p>
             </div>

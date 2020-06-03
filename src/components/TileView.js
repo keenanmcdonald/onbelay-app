@@ -18,11 +18,7 @@ class TileView extends React.Component{
         this.props.loadUsers()
             .then(users => {
                 this.setState({users})
-            })
-        /*if (isMobile){
-            this.props.history.push(`${this.props.path}/swipe/0`)
-        }*/
-        
+            })        
     }
 
     generateCards(users){
